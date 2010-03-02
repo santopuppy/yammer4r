@@ -1,11 +1,12 @@
 class Yammer::Message
   
-  attr_reader :id, :url, :web_url, :replied_to_id, :thread_id,
+  attr_reader :id, :group_id, :url, :web_url, :replied_to_id, :thread_id,
               :body_plain, :body_parsed, :message_type, :client_type,
               :sender_id, :sender_type
   
   def initialize(m)
     @id = m['id']
+    @id = m['group_id']
     @url = m['url']
     @web_url = m['web_url']
     @replied_to_id = m['replied_to_id']
