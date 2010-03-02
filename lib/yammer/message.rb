@@ -6,7 +6,7 @@ class Yammer::Message
   
   def initialize(m)
     @id = m['id']
-    @id = m['group_id']
+    @group_id = m['group_id']
     @url = m['url']
     @web_url = m['web_url']
     @replied_to_id = m['replied_to_id']
