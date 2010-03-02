@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
                lib/yammer4r.rb
                lib/yammer/client.rb
                lib/yammer/message.rb
+               lib/yammer/group.rb
                lib/yammer/message_list.rb
                lib/yammer/user.rb
                lib/ext/core_ext.rb

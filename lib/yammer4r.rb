@@ -16,6 +16,7 @@ require 'mash'
 $:.unshift(File.dirname(__FILE__))
 require 'ext/core_ext'
 require 'yammer/client'
+require 'yammer/group'
 require 'yammer/message'
 require 'yammer/message_list'
 require 'yammer/user'

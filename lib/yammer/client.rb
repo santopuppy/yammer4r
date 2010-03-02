@@ -53,6 +53,16 @@ module Yammer
       Yammer::User.new(mash(u), self)
     end
     alias_method :me, :current_user
+    
+    def groups(params = {})
+      params.merge!(:resource => :groups)
+      JSON.parse(yammer_request(:get, params).body).map { |g| Yammer::User.new(mash(g), self) }
+    end
+    
+    def group(id)
+      g = JSON.parse(yammer_request(:get, {:resource => :groups, :id => id}).body)
+      Yammer::Group.new(mash(g), self)
+    end
 
     private
 
