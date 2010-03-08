@@ -48,8 +48,9 @@ module Yammer
       Yammer::User.new(mash(u), self)
     end
 
-    def current_user
-      u = JSON.parse(yammer_request(:get, {:resource => :users, :action => :current}).body)
+    def current_user(params = {})
+      params.merge!(:resource => :users, :action => :current)
+      u = JSON.parse(yammer_request(:get, params).body)
       Yammer::User.new(mash(u), self)
     end
     alias_method :me, :current_user
